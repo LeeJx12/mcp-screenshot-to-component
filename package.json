@@ -1,0 +1,61 @@
+{
+  "name": "@saverorevas/mcp-screenshot-to-component",
+  "version": "0.1.0",
+  "description": "MCP server that turns UI screenshots into structured component trees so LLMs can implement them accurately.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-screenshot-to-component": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "screenshot",
+    "ui-to-code",
+    "figma",
+    "llm-tools",
+    "computer-vision"
+  ],
+  "author": "LeeJx12 <saverorevas@naver.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeeJx12/mcp-screenshot-to-component"
+  },
+  "bugs": {
+    "url": "https://github.com/LeeJx12/mcp-screenshot-to-component/issues"
+  },
+  "homepage": "https://github.com/LeeJx12/mcp-screenshot-to-component#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "sharp": "^0.33.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.55.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}

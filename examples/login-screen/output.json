@@ -1,0 +1,119 @@
+{
+  "root": {
+    "id": "root",
+    "type": "container",
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "width": 800,
+      "height": 600
+    },
+    "layout_hint": "single",
+    "children": [
+      {
+        "id": "n0",
+        "type": "container",
+        "bbox": {
+          "x": 238,
+          "y": 118,
+          "width": 324,
+          "height": 404
+        },
+        "layout_hint": "absolute",
+        "children": [
+          {
+            "id": "n1",
+            "type": "container",
+            "bbox": {
+              "x": 277,
+              "y": 321,
+              "width": 246,
+              "height": 46
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n2",
+            "type": "container",
+            "bbox": {
+              "x": 277,
+              "y": 397,
+              "width": 246,
+              "height": 46
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n3",
+            "type": "container",
+            "bbox": {
+              "x": 298,
+              "y": 230,
+              "width": 204,
+              "height": 24
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n4",
+            "type": "container",
+            "bbox": {
+              "x": 374,
+              "y": 154,
+              "width": 52,
+              "height": 52
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n5",
+            "type": "container",
+            "bbox": {
+              "x": 318,
+              "y": 260,
+              "width": 164,
+              "height": 16
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n6",
+            "type": "container",
+            "bbox": {
+              "x": 418,
+              "y": 450,
+              "width": 104,
+              "height": 14
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n7",
+            "type": "container",
+            "bbox": {
+              "x": 278,
+              "y": 378,
+              "width": 84,
+              "height": 16
+            },
+            "layout_hint": "single"
+          },
+          {
+            "id": "n8",
+            "type": "container",
+            "bbox": {
+              "x": 278,
+              "y": 302,
+              "width": 64,
+              "height": 16
+            },
+            "layout_hint": "single"
+          }
+        ]
+      }
+    ]
+  },
+  "detected_patterns": [],
+  "confidence": 0.39,
+  "region_count": 9
+}

@@ -49,6 +49,14 @@ export async function preprocessImage(imageUrl: string): Promise<PreprocessedIma
   };
 }
 
+/**
+ * Load raw image bytes from URL/base64. Exported for use by OCR adapters that
+ * prefer the original encoded buffer rather than the preprocessed raw pixels.
+ */
+export async function loadImageBufferForOcr(imageUrl: string): Promise<Buffer> {
+  return loadImageBuffer(imageUrl);
+}
+
 async function loadImageBuffer(imageUrl: string): Promise<Buffer> {
   // Base64 data URL
   if (imageUrl.startsWith("data:")) {

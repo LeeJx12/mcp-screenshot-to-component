@@ -14,6 +14,7 @@ export type LayoutHint =
   | "vertical_stack"
   | "grid"
   | "absolute"
+  | "single"
   | "unknown";
 
 export type NodeType =
@@ -23,6 +24,14 @@ export type NodeType =
   | "button"
   | "input"
   | "unknown";
+
+export type DetectedPattern =
+  | "card_grid"
+  | "list"
+  | "top_nav"
+  | "sidebar"
+  | "hero"
+  | "form";
 
 export interface ComponentNode {
   id: string;

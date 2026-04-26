@@ -34,6 +34,7 @@ async function makeSyntheticScreenshot(
     height: info.height,
     channels: info.channels,
     original_size: { width: info.width, height: info.height },
+    padding: 0,
   };
 }
 

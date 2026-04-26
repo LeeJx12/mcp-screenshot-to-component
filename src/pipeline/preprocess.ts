@@ -14,9 +14,14 @@ export interface PreprocessedImage {
   height: number;
   channels: number;
   original_size: { width: number; height: number };
+  /** Pixels of padding added on each side. Subtract from detected bboxes. */
+  padding: number;
 }
 
 const MAX_DIMENSION = 2048;
+const EDGE_PADDING = 4; // pixels of padding added around the frame so
+// rectangles touching the image boundary still produce closed contours.
+// The padding is later compensated for in detect output coordinates.
 
 export async function preprocessImage(imageUrl: string): Promise<PreprocessedImage> {
   const buffer = await loadImageBuffer(imageUrl);
@@ -30,15 +35,28 @@ export async function preprocessImage(imageUrl: string): Promise<PreprocessedIma
   const needsResize =
     metadata.width > MAX_DIMENSION || metadata.height > MAX_DIMENSION;
 
-  const processed = needsResize
-    ? await image
-        .resize(MAX_DIMENSION, MAX_DIMENSION, {
-          fit: "inside",
-          withoutEnlargement: true,
-        })
-        .raw()
-        .toBuffer({ resolveWithObject: true })
-    : await image.raw().toBuffer({ resolveWithObject: true });
+  // Resize first (if needed), then add a uniform padding ring on all 4 sides.
+  // Padding uses a neutral mid-grey so it contrasts with both light and dark
+  // boundary-touching components — guaranteeing strong Sobel edges where the
+  // real component meets the padding.
+  let pipeline = image;
+  if (needsResize) {
+    pipeline = pipeline.resize(MAX_DIMENSION, MAX_DIMENSION, {
+      fit: "inside",
+      withoutEnlargement: true,
+    });
+  }
+
+  const processed = await pipeline
+    .extend({
+      top: EDGE_PADDING,
+      bottom: EDGE_PADDING,
+      left: EDGE_PADDING,
+      right: EDGE_PADDING,
+      background: { r: 128, g: 128, b: 128, alpha: 1 },
+    })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
 
   return {
     buffer: processed.data,
@@ -46,6 +64,7 @@ export async function preprocessImage(imageUrl: string): Promise<PreprocessedIma
     height: processed.info.height,
     channels: processed.info.channels,
     original_size: { width: metadata.width, height: metadata.height },
+    padding: EDGE_PADDING,
   };
 }
 

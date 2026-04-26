@@ -1,0 +1,176 @@
+[
+  {
+    "name": "01_single_card",
+    "gt_rect_count": 1,
+    "detected_region_count": 1,
+    "bbox_recall": 1,
+    "bbox_precision": 1,
+    "expected_patterns": [],
+    "detected_patterns": [],
+    "pattern_precision": 1,
+    "pattern_recall": 1,
+    "pattern_f1": 1,
+    "detect_ms": 30,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "02_card_grid_3",
+    "gt_rect_count": 3,
+    "detected_region_count": 3,
+    "bbox_recall": 1,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "card_grid"
+    ],
+    "detected_patterns": [
+      "card_grid"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 1,
+    "pattern_f1": 1,
+    "detect_ms": 19,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "03_card_grid_2x2",
+    "gt_rect_count": 4,
+    "detected_region_count": 4,
+    "bbox_recall": 1,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "card_grid"
+    ],
+    "detected_patterns": [
+      "card_grid"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 1,
+    "pattern_f1": 1,
+    "detect_ms": 28,
+    "postprocess_ms": 1
+  },
+  {
+    "name": "04_vertical_list",
+    "gt_rect_count": 4,
+    "detected_region_count": 4,
+    "bbox_recall": 1,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "list"
+    ],
+    "detected_patterns": [
+      "list"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 1,
+    "pattern_f1": 1,
+    "detect_ms": 15,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "05_sidebar_main",
+    "gt_rect_count": 2,
+    "detected_region_count": 1,
+    "bbox_recall": 0.5,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "sidebar"
+    ],
+    "detected_patterns": [],
+    "pattern_precision": 0,
+    "pattern_recall": 0,
+    "pattern_f1": 0,
+    "detect_ms": 32,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "06_top_nav",
+    "gt_rect_count": 2,
+    "detected_region_count": 1,
+    "bbox_recall": 0.5,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "top_nav"
+    ],
+    "detected_patterns": [],
+    "pattern_precision": 0,
+    "pattern_recall": 0,
+    "pattern_f1": 0,
+    "detect_ms": 21,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "07_dashboard",
+    "gt_rect_count": 6,
+    "detected_region_count": 4,
+    "bbox_recall": 0.667,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "top_nav",
+      "sidebar",
+      "card_grid"
+    ],
+    "detected_patterns": [
+      "card_grid"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 0.333,
+    "pattern_f1": 0.5,
+    "detect_ms": 59,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "08_form",
+    "gt_rect_count": 5,
+    "detected_region_count": 5,
+    "bbox_recall": 1,
+    "bbox_precision": 1,
+    "expected_patterns": [],
+    "detected_patterns": [
+      "list"
+    ],
+    "pattern_precision": 0,
+    "pattern_recall": 1,
+    "pattern_f1": 0,
+    "detect_ms": 18,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "09_sidebar_card_grid",
+    "gt_rect_count": 4,
+    "detected_region_count": 3,
+    "bbox_recall": 0.75,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "sidebar",
+      "card_grid"
+    ],
+    "detected_patterns": [
+      "card_grid"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 0.5,
+    "pattern_f1": 0.667,
+    "detect_ms": 21,
+    "postprocess_ms": 0
+  },
+  {
+    "name": "10_nav_list",
+    "gt_rect_count": 5,
+    "detected_region_count": 4,
+    "bbox_recall": 0.8,
+    "bbox_precision": 1,
+    "expected_patterns": [
+      "top_nav",
+      "list"
+    ],
+    "detected_patterns": [
+      "list"
+    ],
+    "pattern_precision": 1,
+    "pattern_recall": 0.5,
+    "pattern_f1": 0.667,
+    "detect_ms": 19,
+    "postprocess_ms": 0
+  }
+]

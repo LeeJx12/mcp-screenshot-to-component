@@ -54,11 +54,52 @@ export async function detectStructure(
   const labelMap = labelConnectedComponents(binary, image.width, image.height);
   const rawRegions = extractBoundingBoxes(labelMap, image.width, image.height);
 
-  const regions = filterRegions(rawRegions, image.width, image.height, detailLevel);
+  // Translate regions back to the un-padded coordinate system before filtering
+  const padding = image.padding;
+  const innerWidth = image.width - 2 * padding;
+  const innerHeight = image.height - 2 * padding;
+  const adjusted = rawRegions
+    .map((r) => unpadRegion(r, padding, innerWidth, innerHeight))
+    .filter((r): r is DetectedRegion => r !== null);
+
+  const regions = filterRegions(adjusted, innerWidth, innerHeight, detailLevel);
 
   return {
     regions,
-    image_dims: { width: image.width, height: image.height },
+    image_dims: { width: innerWidth, height: innerHeight },
+  };
+}
+
+function unpadRegion(
+  r: DetectedRegion,
+  padding: number,
+  innerWidth: number,
+  innerHeight: number
+): DetectedRegion | null {
+  let x = r.bbox.x - padding;
+  let y = r.bbox.y - padding;
+  let w = r.bbox.width;
+  let h = r.bbox.height;
+
+  // Clip to inner frame
+  if (x < 0) {
+    w += x;
+    x = 0;
+  }
+  if (y < 0) {
+    h += y;
+    y = 0;
+  }
+  if (x + w > innerWidth) w = innerWidth - x;
+  if (y + h > innerHeight) h = innerHeight - y;
+
+  if (w <= 0 || h <= 0) return null;
+
+  return {
+    bbox: { x, y, width: w, height: h },
+    area: w * h,
+    confidence: r.confidence,
+    kind: r.kind,
   };
 }
 

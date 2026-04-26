@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="700" viewBox="0 0 800 700">
+  <rect width="100%" height="100%" fill="#f9fafb"/>
+
+  <!-- Card -->
+  <rect x="200" y="60" width="400" height="580" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Title -->
+  <rect x="280" y="100" width="240" height="24" fill="#111827"/>
+
+  <!-- Subtitle -->
+  <rect x="320" y="138" width="160" height="12" fill="#9ca3af"/>
+
+  <!-- Field 1: Name -->
+  <rect x="240" y="190" width="50" height="11" fill="#374151"/>
+  <rect x="240" y="208" width="320" height="44" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- Field 2: Email -->
+  <rect x="240" y="276" width="60" height="11" fill="#374151"/>
+  <rect x="240" y="294" width="320" height="44" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- Field 3: Password -->
+  <rect x="240" y="362" width="80" height="11" fill="#374151"/>
+  <rect x="240" y="380" width="320" height="44" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- Field 4: Confirm Password -->
+  <rect x="240" y="448" width="120" height="11" fill="#374151"/>
+  <rect x="240" y="466" width="320" height="44" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- Submit button -->
+  <rect x="240" y="540" width="320" height="48" rx="6" fill="#3b82f6"/>
+</svg>

@@ -1,0 +1,131 @@
+{
+  "root": {
+    "id": "root",
+    "type": "container",
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 800
+    },
+    "layout_hint": "absolute",
+    "children": [
+      {
+        "id": "n0",
+        "type": "container",
+        "bbox": {
+          "x": 270,
+          "y": 318,
+          "width": 884,
+          "height": 404
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n1",
+        "type": "container",
+        "bbox": {
+          "x": 270,
+          "y": 94,
+          "width": 284,
+          "height": 204
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n2",
+        "type": "container",
+        "bbox": {
+          "x": 570,
+          "y": 94,
+          "width": 284,
+          "height": 204
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n3",
+        "type": "container",
+        "bbox": {
+          "x": 870,
+          "y": 94,
+          "width": 284,
+          "height": 204
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n4",
+        "type": "container",
+        "bbox": {
+          "x": 22,
+          "y": 94,
+          "width": 196,
+          "height": 44
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n5",
+        "type": "container",
+        "bbox": {
+          "x": 23,
+          "y": 143,
+          "width": 194,
+          "height": 42
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n6",
+        "type": "container",
+        "bbox": {
+          "x": 23,
+          "y": 191,
+          "width": 194,
+          "height": 42
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n7",
+        "type": "container",
+        "bbox": {
+          "x": 30,
+          "y": 18,
+          "width": 104,
+          "height": 28
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n8",
+        "type": "container",
+        "bbox": {
+          "x": 998,
+          "y": 16,
+          "width": 84,
+          "height": 32
+        },
+        "layout_hint": "single"
+      },
+      {
+        "id": "n9",
+        "type": "container",
+        "bbox": {
+          "x": 1094,
+          "y": 16,
+          "width": 84,
+          "height": 32
+        },
+        "layout_hint": "single"
+      }
+    ]
+  },
+  "detected_patterns": [
+    "card_grid",
+    "list"
+  ],
+  "confidence": 0.36,
+  "region_count": 10
+}

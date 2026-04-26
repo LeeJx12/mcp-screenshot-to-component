@@ -7,9 +7,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
 
-> 🚧 **Status: Alpha (W1 of development)**. Tool contracts are stable,
-> CV pipeline is under active implementation (W2). Star the repo to follow along.
-
 ---
 
 ## Why this exists
@@ -117,10 +114,36 @@ Full details: [docs/pipeline-design.md](./docs/pipeline-design.md)
 
 ## Examples
 
-Real screenshots with extracted trees live in [examples/](./examples/):
+Real input → output pairs in [examples/](./examples/):
 
-- [login-screen](./examples/login-screen/) — simple vertical stack
-- _More coming in W3._
+| Example | Patterns detected | Regions |
+|---|---|---:|
+| [dashboard](./examples/dashboard/) | `card_grid`, `list` | 10 |
+| [signup-form](./examples/signup-form/) | (none) | 12 |
+| [login-screen](./examples/login-screen/) | (none) | 9 |
+
+Each directory has `input.svg`, `input.png`, `output.json`, and a brief
+README explaining what to look for.
+
+---
+
+## Benchmarks
+
+Automated accuracy measurement against 10 synthetic UI fixtures with known
+ground truth — see [`benchmarks/`](./benchmarks/).
+
+| Metric | Value |
+|---|---:|
+| Avg bbox recall (IoU ≥ 0.5) | 0.82 |
+| Avg bbox precision | **1.00** |
+| Avg pattern F1 | 0.58 |
+| Avg detect latency | 118 ms |
+
+Simple cases (card grid, vertical list, form) reach 1.0 on all metrics.
+Recall drops on layouts where components touch the image frame —
+tracked for v0.2.
+
+Run locally: `npx tsx benchmarks/run.ts` (after `npm run build`).
 
 ---
 
@@ -146,10 +169,23 @@ npm test
 
 ## Roadmap
 
-- [x] W1: Project scaffolding, tool contracts, pipeline skeleton
-- [ ] W2: Detect + Postprocess full implementation, first 3 examples
-- [ ] W3: `suggest_component_tree` framework mapping, benchmarks, blog post
-- [ ] W4+: OCR adapter (Vision API + tesseract.js fallback), npm publish
+- [x] Project scaffolding, MCP tool contracts, pipeline skeleton
+- [x] Sobel edge detection + connected-components in pure JS
+- [x] BBox nesting + layout inference + pattern detection
+- [x] tesseract.js OCR adapter (no cloud deps)
+- [x] Benchmark suite (10 fixtures, IoU-based scoring)
+- [x] Three worked examples (login, signup, dashboard)
+- [ ] Color-region segmentation for boundary-touching components
+- [ ] `suggest_component_tree` framework mapping rules
+- [ ] End-to-end LLM generation comparison (GPT-4V vs MCP-augmented)
+
+---
+
+## Status
+
+> 🚧 **Alpha (v0.1).** Tool contracts are stable, CV pipeline is implemented
+> end-to-end, but accuracy varies with layout complexity. See
+> [`benchmarks/accuracy.md`](./benchmarks/accuracy.md) for measured numbers.
 
 ---
 
